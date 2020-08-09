@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import QuestionContextProvider from "./context/QuestionContext"
+import Questions from "./components/Questions";
+import Nav from "./components/Nav";
+import FooterPage from "./components/FooterPage";
+import {MDBBtn} from "mdbreact";
 
 function App() {
+  const [start, setstart] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<Nav />
+{!start && <div id="start" > 
+<MDBBtn  onClick={()=>setstart(true)} gradient="purple"  >Start?</MDBBtn> </div> }
+{start &&  (
+  <QuestionContextProvider>
+     <Questions setstart={setstart} />
+    </QuestionContextProvider>
+) }
+    
+  <FooterPage />
     </div>
   );
 }

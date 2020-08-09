@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#f3e5f5 ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#start{
+  text-align: center;
+  padding-top: 30%;
+  padding-bottom: 30%;
+  height: 40%;
+}
+#questions{
+  text-align: center;
+  padding-top: 90px;
+}
+#answer{
+  display: flexbox;
+  border: black;
+}
+#answer p{
+  padding-right: 30px;
+  color: green;
 }
